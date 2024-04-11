@@ -1,0 +1,33 @@
+"""两种冒泡排序算法"""
+
+"""2.1 冒泡排序"""
+def Bubble_sort(arr):
+    if len(arr) < 2:
+        return arr
+    
+    for i in range(len(arr) - 1):
+
+        for j in range(len(arr) - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+    return arr
+
+arr = [50, 10, 90, 30, 70, 40, 80]
+print(Bubble_sort(arr))
+
+"""2.2 冒泡排序"""
+def Bubble_sort(arr):
+
+    if len(arr) < 2:
+        return arr
+    
+    for i in range(len(arr)):
+        for j in range(len(arr) - 1, i, -1):
+            if arr[j - 1] > arr[j]:
+                arr[j - 1], arr[j] = arr[j], arr[j - 1]
+
+    return arr
+
+arr = [50, 10, 90, 30, 70, 40, 80]
+print(Bubble_sort(arr))
